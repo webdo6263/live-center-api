@@ -31,7 +31,7 @@ const initialize = (httpsServer) => {
     const wss = new WebSocket.Server(
       { server: httpsServer }, 
       () => {
-        console.log('Web Socket started on port 3020')
+        console.log('Web Socket started on port 3030')
       }
     );
     wss.on('connection', function connection(ws) {
