@@ -38,10 +38,15 @@ const initialize = (httpsServer) => {
       users.push({
         ws
       });
-      sendMessage({
-        type: 'all-msgs',
-        messages
-    });
+
+        sendMessage({
+            type: 'active-user-count',
+            activeUserCount: users?.length
+        });
+        sendMessage({
+            type: 'all-msgs',
+            messages
+        });
     
       ws.on('message', function incoming(rawData) {
         const data = JSON.parse(rawData.toString())
