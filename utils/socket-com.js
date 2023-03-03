@@ -6,16 +6,17 @@ const initialize = (httpsServer) => {
     const isMessageValid = (message) => {
         return new Promise((resolve, reject) => {
            if(message.includes('spam')) {
-            reject('The text contains spam')    
+            reject('Stop spamming people. Spammer!!!')    
            } else {
             resolve()    
            }
         })
     }
     
-    const addMessage = ({userIp, text, displayName}) => {
+    const addMessage = ({userIp, userId, text, displayName}) => {
         messages.push({
             userIp,
+            userId,
             text,
             displayName,
             createdAt: new Date().toISOString()
